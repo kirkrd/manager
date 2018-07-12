@@ -23,7 +23,7 @@ class Series extends Component {
 
     render() {
         const {series, seriesName, isFetching } = this.state;
-
+        console.log(series);
         return(
             <div>
             <Intro message="Here you can find all of your most loved series" />
