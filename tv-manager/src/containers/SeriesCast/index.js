@@ -4,10 +4,16 @@ import CastList from '../../components/CastList';
 import {Link } from 'react-router-dom'
 class SeriesCast extends Component {
 
-    state = {
-        cast: [],
-        id: 0
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            cast: [],
+            id: 0,
+            hasError: false
+        }
     }
+    
 
     componentDidMount() {
         const { id } = this.props.match.params;
@@ -16,18 +22,27 @@ class SeriesCast extends Component {
             .then(json => this.setState({ cast: json, id: id }));
             
     }
+    componentDidCatch(error, info) {
+        this.setState({hasError: true});
+
+        this.logErrorToMyService(error, info);
+    }
+    logErrorToMyService(error, info){
+        console.log(error, info);
+    }
     
     render() {
-        console.log(this.state.cast);
-        
-        const {cast} = this.state;
-        console.log(this.state.cast[1]);
-        
-        
-        return (
-        
-        <CastList id={this.state.id} list={this.state.cast}></CastList>
-        );
+        if(this.state.hasError) {
+            return <h1>Something went wrong</h1>
+        }
+        else{
+            const {cast} = this.state;
+            return (
+            
+            <CastList id={this.state.id} list={this.state.cast}></CastList>
+            );
+        }   
+       
        
         
     }
