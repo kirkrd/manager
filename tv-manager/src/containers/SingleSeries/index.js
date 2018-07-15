@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader';
+import CastList from '../../components/CastList';
 class SingleSeries extends Component {
     state = {
         show: null
@@ -13,7 +14,8 @@ class SingleSeries extends Component {
     }
     render() {
         const { show } = this.state;
-        console.log(show);
+       
+        
         return (
             <div>
                 {show === null && <Loader />}
@@ -21,17 +23,25 @@ class SingleSeries extends Component {
                     show !== null
                     &&
                     <div>
+                        
                         <p>{show.name}</p>
                         <p>Premiered - {show.premiered}</p>
                         <p>Rating - {show.rating.average}</p>
                         <p>Episodes - {show._embedded.episodes.length}</p>
                         <a href={`/shows/${show.id}/cast`}>
-                        <p>Cast</p>
+                            <p>Cast</p>
                         </a>
-                        <p>
-                            <img alt="Show" src={show.image.medium} />
-                        </p>
                         
+                        {show.image !== null &&
+                            <p>
+                                <img alt="Show" src={show.image.medium} />
+                            </p>
+                        }
+                        
+                            
+
+                        
+
                     </div>
                 }
             </div>
