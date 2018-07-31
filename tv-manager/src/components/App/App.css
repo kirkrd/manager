@@ -9,6 +9,8 @@
 
 .App-header {
   background-color: #222;
+  background-size: 1200px;
+  background-image: url("https://images.pexels.com/photos/668296/pexels-photo-668296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   height: 60px;
   padding: 20px;
   color: white;
@@ -16,6 +18,8 @@
 
 .App-title {
   font-size: 1.5em;
+  text-shadow: 3px 2px black;
+  
 }
 
 .App-intro {

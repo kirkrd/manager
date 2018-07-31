@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 const CastListItem = ({ cast }) => (
-    
+
     <div>
         {cast === null}
         {
@@ -22,19 +22,35 @@ const CastListItem = ({ cast }) => (
 
                 </li>
                 {cast.person.country.name != null &&
-                <li>
-                    {cast.person.country.name}
-                </li>
+                    <li>
+                        {cast.person.country.name}
+                    </li>
                 }
-                
-               
+                {cast.person.birthday != null &&
+                    <li>
+                        <p>Born: {cast.person.birthday} </p>
+
+                    </li>
+                }
+
+
                 <li>
                     {cast.person.image !== null &&
-                    
+
                         <img src={cast.person.image.medium} alt="person image" />
+
+                    }
+                    {cast.character.image !== null &&
+
+                        <img src={cast.character.image.medium} alt="person image" />
+
+                    }
+                    {cast.character.image == null &&
+
+                        <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person image" />
                     }
                     {cast.person.image == null &&
-                        
+
                         <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person image" />
                     }
 
@@ -49,8 +65,8 @@ const CastListItem = ({ cast }) => (
 
 const CastList = (props) => {
     console.log(props);
-    for(let person of props.list){
-        if(person.person.country == null){
+    for (let person of props.list) {
+        if (person.person.country == null) {
             person.person.country = "Unknown";
         }
     }
