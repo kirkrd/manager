@@ -9,16 +9,19 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">TV Series List</h1>
-          <ul className="nav-bar">
-            <li>
-              <a className="nav-link" href={"/"}>
-              <p className="textarea">Home</p>
-              </a>
-            </li>
-          </ul>
         </header>
-        <Main/>
+        <div className="nav-bar">
+            <ul className="nav-ul">
+              <li className="nav-li">
+                <a className="nav-link" href={"/"}>
+                  Home
+                </a>
+              </li>
+            </ul>
+        </div>
+        <Main />
       </div>
+      
     );
   }
 }
