@@ -64,7 +64,7 @@ const CastListItem = ({ cast }) => (
 )
 
 const CastList = (props) => {
-    console.log(props);
+    
     for (let person of props.list) {
         if (person.person.country == null) {
             person.person.country = "Unknown";

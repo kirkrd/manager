@@ -14,7 +14,7 @@ class SingleSeries extends Component {
     }
     render() {
         const { show } = this.state;
-       
+        
         
         return (
             <div>
@@ -25,9 +25,13 @@ class SingleSeries extends Component {
                     <div>
                         
                         <p>{show.name}</p>
+                        <p>Language: {show.language}</p>
+                        <p>Status: {show.status}</p>
                         <p>Premiered - {show.premiered}</p>
                         <p>Rating - {show.rating.average}</p>
                         <p>Episodes - {show._embedded.episodes.length}</p>
+                        <p>Network: {show.network.name}</p>
+                        <p>Genre: {show.genres[0]}, {show.genres[1]}</p>
                         <a href={`/shows/${show.id}/cast`}>
                             <p>Cast</p>
                         </a>
