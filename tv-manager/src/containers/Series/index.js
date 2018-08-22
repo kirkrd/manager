@@ -33,6 +33,11 @@ class Series extends Component {
                  type="text" 
                  onChange={ this.onSeriesInputChange} />
             </div>
+            {
+                !isFetching && seriesName.length !== 0 && series.length !== 0 
+                &&
+                <p>Displaying TV-series with matched results for: "{seriesName}"</p>
+            }
             { 
                 !isFetching && series.length === 0 && seriesName.trim() === ''
                 &&
@@ -49,6 +54,7 @@ class Series extends Component {
             {
                 !isFetching && <SeriesList list={this.state.series}/> 
             }
+            
             
             </div>
         )
