@@ -37,21 +37,21 @@ const CastListItem = ({ cast }) => (
                 <li>
                     {cast.person.image !== null &&
 
-                        <img src={cast.person.image.medium} alt="person image" />
+                        <img src={cast.person.image.medium} alt="person" />
 
                     }
                     {cast.character.image !== null &&
 
-                        <img src={cast.character.image.medium} alt="person image" />
+                        <img src={cast.character.image.medium} alt="person" />
 
                     }
                     {cast.character.image == null &&
 
-                        <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person image" />
+                        <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person" />
                     }
                     {cast.person.image == null &&
 
-                        <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person image" />
+                        <img className="unknown_user_img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" alt="person" />
                     }
 
 

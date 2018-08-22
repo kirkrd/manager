@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import Loader from '../../components/Loader';
 import CastList from '../../components/CastList';
-import {Link } from 'react-router-dom'
+
 class SeriesCast extends Component {
 
     constructor(props) {
@@ -36,7 +35,6 @@ class SeriesCast extends Component {
             return <h1>Something went wrong</h1>
         }
         else{
-            const {cast} = this.state;
             return (
             
             <CastList id={this.state.id} list={this.state.cast}></CastList>
