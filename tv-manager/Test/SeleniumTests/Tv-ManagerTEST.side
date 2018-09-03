@@ -1,0 +1,101 @@
+{
+  "id": "59bd8ac5-6a51-43fb-afc7-e45b78b8dd15",
+  "version": "1.1",
+  "name": "TV-Manager React Test",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "dc4c880a-51b5-4d19-957b-31e497481ff1",
+    "name": "Test search for \"game of thrones\" go to cast, go back and then click home.",
+    "commands": [{
+      "id": "d1ed1a5b-ae28-4dd4-a28e-544933ae0d54",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c48a11e3-21fb-443f-932a-7c0a35cf621d",
+      "comment": "",
+      "command": "click",
+      "target": "css=input[type=\"text\"]",
+      "targets": [
+        ["css=input[type=\"text\"]", "css"],
+        ["xpath=//input[@value='']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73e3f443-42e3-49e9-b6d5-6c103e064533",
+      "comment": "",
+      "command": "type",
+      "target": "css=input[type=\"text\"]",
+      "targets": [
+        ["css=input[type=\"text\"]", "css"],
+        ["xpath=//input[@value='Game of Thrones']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Game of Thrones"
+    }, {
+      "id": "ab2ac718-cbf7-4239-bee7-20a2fd82f43c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Game of Thrones",
+      "targets": [
+        ["linkText=Game of Thrones", "linkText"],
+        ["css=ul.series-list > li > a", "css"],
+        ["xpath=//a[contains(text(),'Game of Thrones')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/series/82')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f97f811b-3ff6-4ef5-ab85-a6b4c1d181ec",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='root']/div/div[2]/div/a[2]/p",
+      "targets": [
+        ["xpath=//div[@id='root']/div/div[2]/div/a[2]/p", "xpath:idRelative"],
+        ["xpath=//a[2]/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0f961d2-104b-4333-b289-d4a6d6f44fb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=p",
+      "targets": [
+        ["css=p", "css"],
+        ["xpath=//div[@id='root']/div/div[2]/a/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8f1c378-02f3-431d-bb34-e24ce5abef7a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=a.nav-link", "css"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "b1ed89d1-93f8-4ac4-825c-9350a1d35fe8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["dc4c880a-51b5-4d19-957b-31e497481ff1"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
